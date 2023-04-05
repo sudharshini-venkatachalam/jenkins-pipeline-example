@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir("C:\ProgramData\Jenkins\.jenkins\workspace\my pipeline test\") {
+                dir("C:/ProgramData/Jenkins/.jenkins/workspace/my pipeline test/") {
                 sh 'mvn -B -DskipTests clean package'
                 }
             
