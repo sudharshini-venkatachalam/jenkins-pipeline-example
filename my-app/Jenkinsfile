@@ -24,9 +24,9 @@ pipeline {
      }
     post {
        always {
-          junit(
+          junit(testResults: 'target/surefire-reports/*.xml', 
         allowEmptyResults: true,
-        testResults: '*/test-reports/.xml'
+        
       )
       }
    } 
