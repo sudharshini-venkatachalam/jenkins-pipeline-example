@@ -1,18 +1,10 @@
 pipeline {
     agent any
 
-    tools {
-        maven "Maven"
-        jdk "jdk-17"
-    }
+   
 
-    stages {
-        stage('Initialize'){
-            steps{
-                echo "PATH = ${M2_HOME}/bin:${PATH}"
-                echo "M2_HOME = /opt/maven"
-            }
-        }
+    
+        
         stage('Build') {
             steps {
                 dir("C:/ProgramData/Jenkins/.jenkins/workspace/my pipeline test/") {
@@ -21,7 +13,7 @@ pipeline {
             
             }
         }
-     }
+     
     post {
        always {
           junit(testResults: 'target/surefire-reports/*.xml', 
